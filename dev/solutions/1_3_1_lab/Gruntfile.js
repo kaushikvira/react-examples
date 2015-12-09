@@ -18,10 +18,6 @@ module.exports = function(grunt){
                 files: [
                   // Copy HTML
                   {expand: true, flatten: true, src: ['dev/index.html'], dest: 'dist/', filter: 'isFile'},
-                  // Copy CSS
-                  {expand: true, flatten: true, src: ['dev/css/**'], dest: 'dist/css', filter: 'isFile'},
-                  // Copy Images
-                  {expand: true, flatten: true, src: ['dev/img/**'], dest: 'dist/img', filter: 'isFile'},
                 ]
             }
         },
