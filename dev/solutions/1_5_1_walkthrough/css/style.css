@@ -45,10 +45,3 @@ h1, p, a {
   border-radius: 8px;
   margin: 50px auto;
 }
-
-.greeting-btn {
-  display:block;
-  margin: 30px auto;
-  font-size:16px;
-  padding:5px;
-}
