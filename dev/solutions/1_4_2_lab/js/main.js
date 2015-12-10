@@ -8,7 +8,7 @@ var PhoneInput = require('./components/phoneInput.js');
 var ZipInput = require('./components/zipInput.js');
 var SubmitInput = require('./components/SubmitInput.js');
 
-var ImageBox = React.createClass({
+var ContactForm = React.createClass({
   render: function() {
     return (
       <form className="contact-form" action="#" method="post">
@@ -24,6 +24,6 @@ var ImageBox = React.createClass({
 });
 
 ReactDOM.render(
-  <ImageBox />,
+  <ContactForm />,
   document.getElementById('main')
 );
