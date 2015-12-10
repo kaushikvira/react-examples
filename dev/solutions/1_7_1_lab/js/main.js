@@ -23,11 +23,11 @@ var Greeter = React.createClass({
       });
     }
     return (
-      <div className="phone-book">
+      <div className="phone-book contact-form">
         <h1>Contact Book</h1>
         <form onSubmit={this.makeUpdate}>
-          <input type="text" name="fullName" placeholder="Enter Name" />
-          <input type="submit" value="submit" />
+          <input type="text" name="fullName" placeholder="Enter Name" className="name-input" />
+          <input type="submit" value="submit" className="submit-button" />
         </form>
         {people}
       </div>
