@@ -2,32 +2,37 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Image = require('./components/image.js');
-var Caption = require('./components/caption.js');
+var contacts =
+    [
+        {id: 1, fullName: "Jim Halpern"},
+        {id: 2, fullName: "Kauhsik Vira"},
+        {id: 3, fullName: "yoo yo honey"}
+    ];
 
-var data = {caption: "Bulldogs are the best dogs in the world!"}
+var Record = require("./components/Record");
 
-var ImageBox = React.createClass({
-  getInitialState: function(){
-    return {captionText: 'A somewhat good dog'};
-  },
-  componentDidMount: function() {
-    // Copies the idea of an AJAX call
-    var myAjaxData = data;
-    this.setState({captionText: data.caption});
-  },
-  render: function() {
-    return (
-      <div className="image-box">
-        <h1>My Favorite Dog</h1>
-        <Image  />
-        <Caption text={this.state.captionText} />
-      </div>
-    );
-  }
+var PhoneBook = React.createClass({
+
+    render: function() {
+
+        var myContracts = this.props.data.map(function(object) {
+            return (
+                <Record person={object.fullName} key={object.id}>
+                    {object.fullName}
+                </Record>
+            )
+        })
+
+        return (
+            <div className="phone-book">
+                <h1>My Favorite Book</h1>
+                {myContracts}
+            </div>
+        );
+    }
 });
 
 ReactDOM.render(
-  <ImageBox />,
-  document.getElementById('main')
+    <PhoneBook data={contacts}/>,
+    document.getElementById('main')
 );
