@@ -2,14 +2,14 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Record = React.createClass({
+var Contact = React.createClass({
     render: function() {
         return (
-            <div className="contract">
-                {this.props.person}
+            <div className="contactWrap">
+                {this.props.name}
             </div>
         )
     }
 });
 
-module.exports = Record;
+module.exports = Contact;
