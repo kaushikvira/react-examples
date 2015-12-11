@@ -3,20 +3,21 @@ var React = require('react');
 var Search = require("./Search");
 var ContactList = require("./ContactList")
 
-var contactData = [{name: "kaushik"}, {name: "Hellllo"}];
-
 var ContactBook = React.createClass({
-
-    onSearchClick: function(event) {
-        console.log(event);
+    contactData: [{name: "kaushik"}, {name: "Hellllo"}],
+    getInitialState: function() {
+        return {data: this.contactData};
     },
-
+    onAddName: function(name) {
+        this.contactData.push({name: name})
+        this.setState({});
+    },
     render: function() {
         return (
             <div className="ContactBookWrapper">
                 This is Wrapper
-                <Search onSearchClick={this.onSearchClick}  />
-                <ContactList contactData={contactData}/>
+                <Search onAddName={this.onAddName}/>
+                <ContactList contactData={this.state.data}/>
             </div>
         )
     }
