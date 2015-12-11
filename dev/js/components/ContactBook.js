@@ -4,12 +4,11 @@ var Search = require("./Search");
 var ContactList = require("./ContactList")
 
 var ContactBook = React.createClass({
-    contactData: [{name: "kaushik"}, {name: "Hellllo"}],
     getInitialState: function() {
-        return {data: this.contactData};
+        return {data: [{name: "helllo"}, {name: "yoooooo"}]};
     },
     onAddName: function(name) {
-        this.contactData.push({name: name})
+        this.state.data.push({name: name})
         this.setState({});
     },
     render: function() {
